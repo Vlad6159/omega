@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('genres', function (Blueprint $table) {
+        Schema::create('performances', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('picture');
+            $table->integer('cost');
+            $table->string('age_limit');
+            $table->date('date');
+            $table->foreignId('genre_id')->constrained('genres');
             $table->timestamps();
         });
     }
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('genres');
+        Schema::dropIfExists('performances');
     }
 };
