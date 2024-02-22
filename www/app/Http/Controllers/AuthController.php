@@ -42,7 +42,7 @@ class AuthController extends Controller
         ]);
         if (auth()->attempt($validate)){
             $request->session()->regenerate();
-            return redirect('/index');
+            return redirect('/');
         }
         return redirect('/signin');
     }

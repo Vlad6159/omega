@@ -18,6 +18,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Где нас найти?</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Где нас найти?</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -25,5 +28,7 @@
 @endsection
 
 @section('content')
+
+
 
 @endsection

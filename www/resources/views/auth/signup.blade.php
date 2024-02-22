@@ -6,15 +6,15 @@
             @csrf
             <div class="col-12">
                 <label for="surname" class="form-label">Фамилия</label>
-                <input type="email" class="form-control" id="surname" name="surname" placeholder="Иванов">
+                <input type="text" class="form-control" id="surname" name="surname" placeholder="Иванов">
             </div>
             <div class="col-12">
                 <label for="name" class="form-label">Имя</label>
-                <input type="email" class="form-control" id="name" name="name" placeholder="Иван">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Иван">
             </div>
             <div class="col-12">
                 <label for="patronymic" class="form-label">Отчество</label>
-                <input type="email" class="form-control" id="patronymic" name="patronymic" placeholder="Иванович">
+                <input type="text" class="form-control" id="patronymic" name="patronymic" placeholder="Иванович">
             </div>
             <div class="col-12">
                 <label for="email" class="form-label">Email</label>
@@ -22,16 +22,16 @@
             </div>
             <div class="col-12">
                 <label for="login" class="form-label">Логин</label>
-                <input type="email" class="form-control" id="login" name="login" placeholder="Логин">
+                <input type="text" class="form-control" id="login" name="login" placeholder="Логин">
             </div>
             <div class="row justify-content-between gap-5">
                 <div class="col">
                     <label for="password" class="form-label">Пароль</label>
-                    <input type="email" class="form-control" id="password" name="password" placeholder="Пароль">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Пароль">
                 </div>
                 <div class="col">
-                    <label for="password" class="form-label">Повтор пароля</label>
-                    <input type="email" class="form-control" id="password" name="password" placeholder="Повтор пароля">
+                    <label for="re-password" class="form-label">Повтор пароля</label>
+                    <input type="password" class="form-control" id="re-password" name="re-password" placeholder="Повтор пароля">
                 </div>
             </div>
             <div class="form-check">
