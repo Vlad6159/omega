@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/',[]);
 Route::get('/signup',[AuthController::class,'signUpPage'])->name('sign.up');
 Route::post('/signup',[AuthController::class,'register'])->name('register');
 Route::get('/signin',[AuthController::class,'signInPage'])->name('sign.in');

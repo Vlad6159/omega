@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use App\Models\Performance;
 use Illuminate\Http\Request;
 use Illuminate\Session\Store;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PerformancesController extends Controller
 {
@@ -23,7 +25,8 @@ class PerformancesController extends Controller
      */
     public function create():View
     {
-        return \view('admin.performances.create');
+        $genres = Genre::all();
+        return \view('admin.performances.create',compact('genres'));
     }
 
     /**
@@ -31,15 +34,16 @@ class PerformancesController extends Controller
      */
     public function store(Request $request)
     {
-        Storage::disk('local')->move('','');
+        Storage::disk('public')->put('/pictures',$request->file('picture'));
 
-        Performance::query()->create([
+        $performance = Performance::query()->create([
             'name' => $request->name,
-            'picture' => $request->picture,
+            'picture' => $request->file('picture')->hashName(),
             'cost' => $request->cost,
             'age_limit' => $request->age_limit,
             'date' => $request->date,
         ]);
+        dd();
     }
 
     /**
