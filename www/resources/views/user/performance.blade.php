@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('nav')
-    @component('components.nav') @endcomponent
+    @component('components.nav')@endcomponent
 @endsection
 
 @section('content')

@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Route::get('{any}',function (){
+//    return view('main');
+//})->where('any','.*');
 
 Route::get('/signup',[AuthController::class,'signUpPage'])->name('sign.up');
 Route::post('/signup',[AuthController::class,'register'])->name('register');

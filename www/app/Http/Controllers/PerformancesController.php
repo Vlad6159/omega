@@ -6,6 +6,7 @@ use App\Models\Genre;
 use App\Models\Performance;
 use Illuminate\Http\Request;
 use Illuminate\Session\Store;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -17,7 +18,8 @@ class PerformancesController extends Controller
      */
     public function index():View
     {
-        return view('admin.performances.index');
+        $performances = Performance::all();
+        return view('admin.performances.index',compact('performances'));
     }
 
     /**
@@ -43,7 +45,9 @@ class PerformancesController extends Controller
             'age_limit' => $request->age_limit,
             'date' => $request->date,
         ]);
-        dd();
+        $performance->genres()->sync($request->checkbox);
+
+        return redirect('/admin');
     }
 
     /**
